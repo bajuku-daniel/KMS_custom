@@ -7,8 +7,6 @@
 
 /**
  * Implements hook_theme().
- *
- * variables must be initialized here they will be populated in the controller
  */
 function kms_custom_theme($existing, $type, $theme, $path) {
   return [
