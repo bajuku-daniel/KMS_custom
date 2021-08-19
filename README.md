@@ -1,5 +1,5 @@
 # Drupal 8 KMS Module
-This Module provides a Custom Block called **Similar Works** that outputs similar nodes that share at least 3 common tags.
+This Module provides a Custom Block called **Similar Works** that outputs **3** similar nodes as LI elements that share at least 3 common tags.
 
 The output is defined as $view_builder->view($node, 'teaser'); and atm there are no configuration settings added.
 
