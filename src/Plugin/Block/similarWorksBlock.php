@@ -71,18 +71,6 @@ class similarWorksBlock extends BlockBase {
 
     // finally return the stuff
     return $build;
-
-  }
-
-  public function getCacheTags() {
-    //With this when your node change your block will rebuild
-    if ($node = \Drupal::routeMatch()->getParameter('node')) {
-      //if there is node add its cachetag
-      return Cache::mergeTags(parent::getCacheTags(), array('node:' . $node->id()));
-    } else {
-      //Return default tags instead.
-      return parent::getCacheTags();
-    }
   }
 
   public function getCacheContexts() {
