@@ -1,10 +1,23 @@
-<div id="similarWorks">
-      <ul>
-          {% for node in data  %}
-            <li>
-             {{ node.node_teaser }}
-            </li>
-          {% endfor %}
-      </ul>
-</div>
+{% if data is not null and data is not empty %}
+
+  <div id="similarWorksList">
+    <ul>
+      {% for node in data  %}
+        <li data-tag-id-list="{{ node.node_tags }}">
+          {{ node.node_teaser }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div id="similarWorksTags">
+    <ul>
+      {% for tag in tag_list  %}
+        <li data-tag-id="{{ tag.tag_id }}">{{ tag.tag_name }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endif %}
+
 
