@@ -49,12 +49,14 @@ class similarWorksBlock extends BlockBase {
 
       // handle the tag ids list and build the array scheme
       foreach($tids_node as $tid) {
-        $term = Term::load($tid);
-        $name = $term->getName();
-        $similar_tag_id_list[$tid] = array(
-          'tag_name' => $name,
-          'tag_id' => $tid
-        );
+        if (!in_array($tid, $similar_tag_id_list)) {
+          $term = Term::load($tid);
+          $name = $term->getName();
+          $similar_tag_id_list[$tid] = array(
+            'tag_name' => $name,
+            'tag_id' => $tid
+          );
+        }
       }
     }
 
