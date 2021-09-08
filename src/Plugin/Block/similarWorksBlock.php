@@ -28,7 +28,7 @@ class similarWorksBlock extends BlockBase {
     // create the Drupal Database logic
     $database = \Drupal::database();
     $sql    = "select ti2.nid, count(*), GROUP_CONCAT(ti2.tid order by ti2.tid) as tids from taxonomy_index ti1 join taxonomy_term_field_data fd1 on fd1.tid = ti1.tid and fd1.vid='tags' join taxonomy_index ti2 on ti1.tid = ti2.tid and ti1.nid<>ti2.nid join node n1 on ti1.nid = n1.nid join node n2 on ti2.nid = n2.nid where ti1.nid = :nid and n1.type = n2.type group by ti2.nid having count(*)>=:count order by count(*) desc";
-    $query  = $database->query($sql, [':nid' => $nid, ':count' => 1]);
+    $query  = $database->query($sql, [':nid' => $nid, ':count' => 3]);
     $result = $query->fetchAll();
 
     // ####  Uncomment and edit this line if you want to limit the results ####
