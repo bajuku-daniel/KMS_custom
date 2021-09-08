@@ -1,0 +1,11 @@
+# Package info
+name: "KMS: custom extensions"
+description: "KMS Module to extend the Drupal contrib functions"
+type: module
+core: 8.x
+package: custom
+
+dependencies:
+  - drupal:block
+  - drupal:node
+  - drupal:path
