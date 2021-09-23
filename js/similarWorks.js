@@ -6,14 +6,14 @@ $('#similarWorksList').on('mouseover','img',function(e) {
 	$('#similarWorksTags li').each( function(i) {
 		var $this = $(this); 
 		if (selectedTags[$this.data('tag-id')]) { 
-			$this.show(); 
+			$this.removeClass('hidden'); 
 		} else { 
-			$this.hide();
+			$this.addClass('hidden');
 		} 
 	});
 });
 $('#similarWorksList').on('mouseout','img',function(e) {
 	$('#similarWorksTags li').each( function() { 
-		$(this).show(); 
+		$(this).removeClass('hidden'); 
 	});
 });
